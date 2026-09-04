@@ -1,0 +1,23 @@
+! V1 - R-EDGE
+! G0/0 -> R-ISP
+! G0/1 -> R-HQ
+! G0/2 -> R-BRANCH
+
+interface g0/0
+ ip address 203.0.113.2 255.255.255.252
+ no shutdown
+
+interface g0/1
+ ip address 10.255.0.1 255.255.255.252
+ no shutdown
+
+interface g0/2
+ ip address 10.255.0.5 255.255.255.252
+ no shutdown
+
+ip route 10.10.10.0 255.255.255.0 10.255.0.2
+ip route 10.10.20.0 255.255.255.0 10.255.0.2
+ip route 10.10.30.0 255.255.255.0 10.255.0.2
+ip route 10.10.40.0 255.255.255.0 10.255.0.2
+ip route 10.10.99.0 255.255.255.0 10.255.0.2
+ip route 10.20.10.0 255.255.255.0 10.255.0.6
