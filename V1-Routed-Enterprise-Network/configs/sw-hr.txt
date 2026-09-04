@@ -1,0 +1,10 @@
+! V1 - SW-HR
+! Fa0/4 -> Core Fa0/1
+! User access ports -> VLAN 20
+
+interface fa0/4
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,99,999
+
+! HR user ports are assigned to VLAN 20.
