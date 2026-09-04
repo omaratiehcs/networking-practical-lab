@@ -1,0 +1,71 @@
+! V1 - Core L3 Switch
+! Interfaces used:
+! Fa0/1 -> SW-HR Fa0/4 (trunk)
+! Fa0/2 -> SW-ENG Fa0/2 (trunk)
+! Fa0/3 -> SW-SALES Fa0/1 (trunk)
+! Fa0/4 -> R-HQ G0/1 (routed L3 link)
+
+ip routing
+
+interface vlan 10
+ ip address 10.10.10.1 255.255.255.0
+ no shutdown
+
+interface vlan 20
+ ip address 10.10.20.1 255.255.255.0
+ no shutdown
+
+interface vlan 30
+ ip address 10.10.30.1 255.255.255.0
+ no shutdown
+
+interface vlan 40
+ ip address 10.10.40.1 255.255.255.0
+ no shutdown
+
+interface vlan 99
+ ip address 10.10.99.1 255.255.255.0
+ no shutdown
+
+interface fa0/1
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,99,999
+
+interface fa0/2
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,99,999
+
+interface fa0/3
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,99,999
+
+interface fa0/4
+ no switchport
+ ip address 10.255.0.10 255.255.255.252
+ no shutdown
+
+ip dhcp excluded-address 10.10.10.1
+ip dhcp excluded-address 10.10.20.1
+ip dhcp excluded-address 10.10.30.1
+ip dhcp excluded-address 10.10.40.1
+ip dhcp excluded-address 10.10.99.1
+
+ip dhcp pool ENGINEERING
+ network 10.10.10.0 255.255.255.0
+ default-router 10.10.10.1
+ dns-server 8.8.8.8
+
+ip dhcp pool HR
+ network 10.10.20.0 255.255.255.0
+ default-router 10.10.20.1
+ dns-server 8.8.8.8
+
+ip dhcp pool SALES
+ network 10.10.30.0 255.255.255.0
+ default-router 10.10.30.1
+ dns-server 8.8.8.8
+
+ip route 0.0.0.0 0.0.0.0 10.255.0.9
