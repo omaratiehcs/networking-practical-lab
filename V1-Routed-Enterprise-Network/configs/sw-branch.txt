@@ -1,0 +1,6 @@
+! V1 - SW-BRANCH
+! G0/1 -> R-BRANCH G0/1
+! Flat branch LAN intentionally remains in VLAN 1 for V1.
+
+! Interfaces remain at their default access behavior.
+! No HQ VLANs are configured on this switch.
