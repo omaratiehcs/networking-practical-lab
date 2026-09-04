@@ -1,0 +1,10 @@
+! V1 - SW-SALES
+! Fa0/1 -> Core Fa0/3
+! Sales user ports -> VLAN 30
+
+interface fa0/1
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,99,999
+
+! Sales user ports are assigned to VLAN 30.
