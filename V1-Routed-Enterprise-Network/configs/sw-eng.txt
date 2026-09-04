@@ -1,0 +1,12 @@
+! V1 - SW-ENG
+! Fa0/2 -> Core Fa0/2
+! Engineering user ports -> VLAN 10
+! Server port -> VLAN 40
+
+interface fa0/2
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30,40,99,999
+
+! Engineering user ports are assigned to VLAN 10.
+! Server-facing port is assigned to VLAN 40.
