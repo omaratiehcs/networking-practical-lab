@@ -22,7 +22,7 @@ This version represents the completed baseline topology. It is intentionally fro
 
 ## V1 Topology
 
-![V1 Enterprise Network Topology](V1-Routed-Enterprise-Network/topology/v1-topology.png)
+![V1 Enterprise Network Topology](V1-Routed-Enterprise-Network/v1-topology.png)
 
 The image above is the official V1 topology captured from Cisco Packet Tracer.
 
