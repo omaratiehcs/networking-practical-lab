@@ -22,28 +22,9 @@ This version represents the completed baseline topology. It is intentionally fro
 
 ## V1 Topology
 
-```text
-                         R-HQ
-                           |
-                     L3 CORE SWITCH
-                    /      |       \
-                   /       |        \
-              SW-HR      SW-ENG    SW-SALES
-                |           |          |
-             HR PCs      ENG PCs     Sales PCs
-                            |
-                          Server
+![V1 Enterprise Network Topology](V1-Routed-Enterprise-Network/topology/v1-topology.png)
 
-                         R-HQ
-                           |
-                         R-EDGE
-                        /       \
-                    R-ISP     R-BRANCH
-                                |
-                           SW-BRANCH
-                          /    |    \
-                        PC1   PC2   PC3
-```
+The image above is the official V1 topology captured from Cisco Packet Tracer.
 
 ## V1 Technologies
 
